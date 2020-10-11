@@ -1,7 +1,19 @@
-<ion-header class="ion-no-border">
-  <ion-toolbar>
+<ion-header>
+
+  <ion-toolbar mode="md">
+    <ion-buttons slot="start" *ngIf="href">
+      <ion-back-button color="primary" [defaultHref]="href">
+      </ion-back-button>
+    </ion-buttons>
+
     <ion-title>
-      Gestor Escola
+      <img src="assets/img/logo_horizontal.png" />
     </ion-title>
+    
+    <ng-content select="[slot='end']" slot="end"></ng-content>
+
   </ion-toolbar>
+  
 </ion-header>
+
+

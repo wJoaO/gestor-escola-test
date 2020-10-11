@@ -4,6 +4,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
+import { GeHeaderComponent } from './ge-header/ge-header.component';
 import { GeLoadingComponent } from './ge-loading/ge-loading.component';
 
 
@@ -16,9 +17,11 @@ import { GeLoadingComponent } from './ge-loading/ge-loading.component';
   ],
   declarations: [
     GeLoadingComponent,
+    GeHeaderComponent,
   ],
   exports: [
     GeLoadingComponent,
+    GeHeaderComponent
   ]
 })
 export class SharedComponentsModule { }
