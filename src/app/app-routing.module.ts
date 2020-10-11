@@ -7,6 +7,11 @@ const routes: Routes = [
     loadChildren: () => import('./pages/school-list/school-list.module').then(m => m.SchoolListPageModule)
   },
   {
+    path: 'escola/detalhe',
+    redirectTo: 'escola/detalhe/',
+    pathMatch: 'full'
+  },
+  {
     path: 'escola/detalhe/:id',
     loadChildren: () => import('./pages/school-detail/school-detail.module').then(m => m.SchoolDetailPageModule)
   },

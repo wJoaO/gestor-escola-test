@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ReplaySubject } from 'rxjs';
-import { School } from 'src/models/exercise';
+import { School } from 'src/models/school';
 
 @Injectable({
   providedIn: 'root'
