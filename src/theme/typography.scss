@@ -1,0 +1,109 @@
+@font-face {
+    font-family: IBMPlexSans-Regular;
+    src: url("../assets/fonts/IBMPlexSans-Regular.ttf");
+}
+
+@font-face {
+    font-family: IBMPlexSans-Bold;
+    src: url("../assets/fonts/IBMPlexSans-Bold.ttf");
+}
+
+* {
+    font-family: IBMPlexSans-Regular;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-family: IBMPlexSans-Bold;
+    font-size: min(7vw, 25px);
+    line-height: 35px;
+}
+
+h2 {
+    font-family: IBMPlexSans-Bold;
+    font-size: min(7vw, 25px);
+    line-height: 35px;
+}
+
+h3 {
+    font-family: IBMPlexSans-Bold;
+    font-size: min(7vw, 25px);
+    line-height: 35px;
+}
+
+h4 {
+    font-family: IBMPlexSans-Bold;
+    font-size: min(6vw, 20px);
+    line-height: 32px;
+}
+
+h5 {
+    font-family: IBMPlexSans-Bold;
+    font-size: min(5vw, 17px);
+    line-height: 27px;
+}
+
+h6 {
+    font-family: IBMPlexSans-Regular;
+    font-size: min(5vw, 17px);
+    line-height: 26px;
+}
+
+p {
+    font-family: IBMPlexSans-Regular;
+    font-size: min(5vw, 15px);
+    line-height: 22px;
+}
+
+.primary-text {
+    color: var(--ion-color-primary);
+}
+
+.dark-text {
+    color: var(--ion-color-dark);
+}
+
+.light-text {
+    color: var(--ion-color-light);
+}
+
+.danger-text {
+    color: var(--ion-color-danger);
+}
+
+.center-text {
+    text-align: center;
+}
+
+.align-left {
+    text-align: left;
+}
+
+.text-bold {
+    font-family: IBMPlexSans-Bold;
+}
+
+.special-font {
+    font-family: IBMPlexSans-Bold;
+}
+
+:root {
+    --ion-font-family: IBMPlexSans-Regular;
+}
+
+$font: (
+    size-title: 16px,
+    font-family: IBMPlexSans-Regular,
+    font-size: 17px,
+    line-height: 26px,
+);
