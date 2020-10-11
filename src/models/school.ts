@@ -7,7 +7,6 @@ export class School extends Collection {
 
 
     name: string
-    bairro: string
     
     classrooms: string[]
 
