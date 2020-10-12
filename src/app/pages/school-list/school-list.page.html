@@ -2,35 +2,44 @@
 
 <ion-content>
 
+  <div class="desktop-responsive">
 
-  <ge-loading [loading]="loading">
+    <ge-loading [loading]="loading">
 
-    <ion-searchbar (ionChange)="filterSchools()" [(ngModel)]="search_text" placeholder="Buscar escola"></ion-searchbar>
+      <ion-searchbar (ionChange)="filterSchools()" [(ngModel)]="search_text" placeholder="Buscar escola">
+      </ion-searchbar>
 
-    <div class="ge-empty-list" *ngIf="schools.length == 0">
-      <img src="assets/img/undraw_empty.svg" />
-      
-      <p class="center-text primary-text" *ngIf="search_text.length < 3">Nenhuma escola cadastrada.</p>
-      <p class="center-text primary-text" *ngIf="search_text.length >= 3">Nenhuma escola corresponde ao pesquisado.</p>
-    </div>
+      <div class="empty-list" *ngIf="schools.length == 0">
+        <img src="assets/img/undraw_empty.svg" />
 
-
-    <ion-item *ngFor="let school of schools" lines="none">
-      <ion-label>
-        <h5 class="primary-text">{{school.name}}</h5>
-        <p class="primary-text">{{school?.classrooms?.length || 0}} Turma(s)</p>
-      </ion-label>
-      <div slot="end">
-        <ion-button fill="clear" (click)="detail(school)"><ion-icon slot="icon-only" name="cog-outline"></ion-icon></ion-button>
-        <ion-button fill="clear" color="danger" (click)="remove(school)"><ion-icon slot="icon-only" name="trash-outline"></ion-icon></ion-button>
+        <p class="center-text primary-text" *ngIf="search_text.length < 3">Nenhuma escola cadastrada.</p>
+        <p class="center-text primary-text" *ngIf="search_text.length >= 3">Nenhuma escola corresponde ao pesquisado.
+        </p>
       </div>
-    </ion-item>
 
-    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-      <ion-fab-button (click)="add()">
-        <ion-icon name="add"></ion-icon>
-      </ion-fab-button>
-    </ion-fab>
 
-  </ge-loading>
+      <ion-item *ngFor="let school of schools" lines="none">
+        <ion-label>
+          <h5 class="primary-text">{{school.name}}</h5>
+          <p class="primary-text">{{school?.classrooms?.length || 0}} Turma(s)</p>
+        </ion-label>
+        <div slot="end">
+          <ion-button fill="clear" (click)="detail(school)">
+            <ion-icon slot="icon-only" name="cog-outline"></ion-icon>
+          </ion-button>
+          <ion-button fill="clear" color="danger" (click)="remove(school)">
+            <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+          </ion-button>
+        </div>
+      </ion-item>
+
+      <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button (click)="add()">
+          <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+
+    </ge-loading>
+  </div>
+
 </ion-content>

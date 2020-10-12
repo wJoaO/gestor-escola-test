@@ -1,48 +1,51 @@
 <ge-header href="escola/lista">
 
-    <ion-button fill="clear" slot="end" (click)="save()">
-        <ion-icon slot="icon-only" name="checkmark-outline" color="primary"></ion-icon>
-    </ion-button>
+  <ion-button fill="clear" slot="end" (click)="save()">
+    <ion-icon slot="icon-only" name="checkmark-outline" color="primary"></ion-icon>
+  </ion-button>
 </ge-header>
 
 <ion-content>
 
+  <div class="desktop-responsive">
     <ge-loading [loading]="loading">
-        <div>
-            <header class="padding-horizontal">
-                <h5 class="primary-text">Nome</h5>
-            </header>
-            <section>
-                <ion-input [(ngModel)]="name" placeholder="Qual o nome da escola?"
-                    class="padding-horizontal primary-text"></ion-input>
-            </section>
-        </div>
+      <div>
+        <header class="padding-horizontal">
+          <h5 class="primary-text">Nome</h5>
+        </header>
+        <section>
+          <ion-input [(ngModel)]="name" placeholder="Qual o nome da escola?" class="padding-horizontal primary-text">
+          </ion-input>
+        </section>
+      </div>
 
-        <div class="classrooms">
-            <header class="padding-horizontal">
-                <h5 class="light-text">Turmas</h5>
-                <ion-fab-button (click)="add_classroom()" color="secondary">
-                    <ion-icon name="add"></ion-icon>
-                </ion-fab-button>
-            </header>
+      <div class="classrooms">
+        <header class="padding-horizontal">
+          <h5 class="light-text">Turmas</h5>
+          <ion-fab-button (click)="add_classroom()" color="secondary">
+            <ion-icon name="add"></ion-icon>
+          </ion-fab-button>
+        </header>
 
-            <section class="padding-horizontal">
-                <ion-item *ngFor="let classroom of classrooms" lines="none">
-                    <ion-label>
-                        <h5 class="primary-text">{{classroom}}</h5>
-                    </ion-label>
-                    <div slot="end">
-                        <ion-button fill="clear" color="danger" (click)="remove_classroom(classroom)">
-                            <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
-                        </ion-button>
-                    </div>
-                </ion-item>
+        <section class="padding-horizontal">
+          <ion-item *ngFor="let classroom of classrooms" lines="none">
+            <ion-label>
+              <h5 class="primary-text">{{classroom}}</h5>
+            </ion-label>
+            <div slot="end">
+              <ion-button fill="clear" color="danger" (click)="remove_classroom(classroom)">
+                <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+              </ion-button>
+            </div>
+          </ion-item>
 
-                <p *ngIf="classrooms.length == 0" class="primary-text center-text">Esta escola não possui turmas cadastradas</p>
-            </section>
-        </div>
+          <p *ngIf="classrooms.length == 0" class="primary-text center-text">Esta escola não possui turmas
+            cadastradas</p>
+        </section>
+      </div>
 
     </ge-loading>
 
+  </div>
 
 </ion-content>

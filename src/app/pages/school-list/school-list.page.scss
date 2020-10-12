@@ -4,3 +4,23 @@ ion-searchbar {
     background: var(--ion-color-light);
     --box-shadow: 0;
 }
+
+@media (min-width: 600px) {
+    ion-searchbar {
+        margin-top: 16px;
+        border-radius: 10px;
+    }
+}
+
+.empty-list {
+    padding: 32px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+img {
+    max-width: 200px;
+}
