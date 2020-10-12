@@ -5,9 +5,13 @@
 
   <ge-loading [loading]="loading">
 
+    <ion-searchbar (ionChange)="filterSchools()" [(ngModel)]="search_text" placeholder="Buscar escola"></ion-searchbar>
+
     <div class="ge-empty-list" *ngIf="schools.length == 0">
       <img src="assets/img/undraw_empty.svg" />
-      <p class="center-text primary-text">Nenhuma escola cadastrada</p>
+      
+      <p class="center-text primary-text" *ngIf="search_text.length < 3">Nenhuma escola cadastrada.</p>
+      <p class="center-text primary-text" *ngIf="search_text.length >= 3">Nenhuma escola corresponde ao pesquisado.</p>
     </div>
 
 

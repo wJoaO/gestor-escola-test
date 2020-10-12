@@ -21,7 +21,12 @@ export class SchoolService {
   }
 
   load(): void {
-    School.realtime<School>().subscribe((schools: School[]) => {
+    School.realtime<School>([], [
+      {
+        name: 'name',
+        type: 'asc'
+      }
+    ]).subscribe((schools: School[]) => {
       this.schools = schools
       this.loading = false
       this.schools_update$.next()

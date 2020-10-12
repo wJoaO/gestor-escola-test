@@ -11,9 +11,9 @@ import { School } from 'src/models/school';
 })
 export class SchoolListPage implements OnInit, OnDestroy {
 
-  get schools(): School[] {
-    return this.schoolService.schools
-  }
+  search_text: string = ""
+
+  schools: School[] = []
 
   get loading(): boolean {
     return this.schoolService.loading
@@ -30,7 +30,19 @@ export class SchoolListPage implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.subscription = this.schoolService.schools_update$.subscribe(() => {
+      this.filterSchools()
       this.ref.detectChanges()
+    })
+  }
+
+  filterSchools(): void {
+    if (this.search_text.length < 3) {
+      this.schools = this.schoolService.schools
+      return
+    }
+
+    this.schools = this.schoolService.schools.filter((school) => {
+      return school.name.toLocaleLowerCase().indexOf(this.search_text.toLocaleLowerCase()) >= 0
     })
   }
 
