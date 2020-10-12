@@ -1,5 +1,7 @@
 {
   "name": "GestorEscolas",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }
