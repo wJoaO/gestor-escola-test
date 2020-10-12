@@ -2,9 +2,9 @@
 
 <ion-content>
 
-  <div class="desktop-responsive">
 
-    <ge-loading [loading]="loading">
+  <ge-loading [loading]="loading">
+    <div class="desktop-responsive">
 
       <ion-searchbar (ionChange)="filterSchools()" [(ngModel)]="search_text" placeholder="Buscar escola">
       </ion-searchbar>
@@ -38,8 +38,8 @@
           <ion-icon name="add"></ion-icon>
         </ion-fab-button>
       </ion-fab>
+    </div>
 
-    </ge-loading>
-  </div>
+  </ge-loading>
 
 </ion-content>
