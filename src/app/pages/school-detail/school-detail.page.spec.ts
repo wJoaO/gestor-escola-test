@@ -1,5 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { IonicModule } from '@ionic/angular';
+import { FormsModule } from '@angular/forms';
+import { RouterTestingModule } from '@angular/router/testing';
+import { AlertController, IonicModule } from '@ionic/angular';
+import { SharedComponentsModule } from 'src/app/components/shared-components.module';
 
 import { SchoolDetailPage } from './school-detail.page';
 
@@ -9,8 +12,8 @@ describe('SchoolDetailPage', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SchoolDetailPage ],
-      imports: [IonicModule.forRoot()]
+      declarations: [SchoolDetailPage],
+      imports: [RouterTestingModule, IonicModule, SharedComponentsModule, FormsModule],
     }).compileComponents();
 
     fixture = TestBed.createComponent(SchoolDetailPage);
